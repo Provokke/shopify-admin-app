@@ -1,0 +1,25 @@
+{
+  "name": "shopify-admin-app",
+  "version": "0.1.0",
+  "description": "Embedded Shopify app skeleton: OAuth install, session storage, cost-aware Admin GraphQL client, bulk operations, idempotent mutations, webhook handlers (app/uninstalled, GDPR). Runs offline against a mock Shopify server.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "demo": "npm run build && node dist/demo/run.js",
+    "check": "npm run typecheck && npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^20.14.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.0.0"
+  }
+}
