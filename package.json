@@ -1,11 +1,13 @@
 {
   "name": "shopify-admin-app",
-  "version": "0.1.0",
-  "description": "Embedded Shopify app skeleton: OAuth install, session storage, cost-aware Admin GraphQL client, bulk operations, idempotent mutations, webhook handlers (app/uninstalled, GDPR). Runs offline against a mock Shopify server.",
+  "version": "0.3.0",
+  "description": "Lightweight Shopify Admin API client with OAuth, bulk operations and webhook verification",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
@@ -21,5 +23,47 @@
     "typescript": "^5.5.0",
     "typescript-eslint": "^8.0.0",
     "vitest": "^2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Provokke/shopify-admin-app.git"
+  },
+  "author": "Provokke",
+  "keywords": [
+    "shopify",
+    "admin",
+    "api",
+    "oauth",
+    "graphql",
+    "bulk-operations"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/graphql-client.d.ts",
+      "default": "./dist/src/graphql-client.js"
+    },
+    "./oauth": {
+      "types": "./dist/src/oauth.d.ts",
+      "default": "./dist/src/oauth.js"
+    },
+    "./webhooks": {
+      "types": "./dist/src/webhooks.d.ts",
+      "default": "./dist/src/webhooks.js"
+    },
+    "./bulk": {
+      "types": "./dist/src/bulk-ops.d.ts",
+      "default": "./dist/src/bulk-ops.js"
+    },
+    "./server": {
+      "types": "./dist/src/server.d.ts",
+      "default": "./dist/src/server.js"
+    }
+  },
+  "main": "./dist/src/graphql-client.js",
+  "types": "./dist/src/graphql-client.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
 }
